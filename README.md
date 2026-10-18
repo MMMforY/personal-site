@@ -1,6 +1,12 @@
-# 简单个人网站
+# MARTIN · 为想象赋予形状
 
-网站使用原生 HTML、CSS 和 JavaScript，无需安装依赖。
+正式网站：https://martinyuan.com/
+
+`docs/` 是当前 React 网站的生产构建文件。GitHub Pages 从 `main` 分支的 `/docs` 目录发布，`docs/CNAME` 记录自有域名，`docs/.nojekyll` 让静态文件直接发布。
+
+本地源工程位于 `E:\Projects\个人网站\terra-nova`，发布检出位于同级 `github-pages`。后续修改源工程并构建，将 `dist/` 内文件更新到本仓库的 `docs/`，提交推送后等待 Pages 发布完成。`docs/` 中的哈希文件名由构建生成，不要直接编辑压缩后的 JavaScript。
+
+下方的原生 HTML 模板说明和原来的 `dist/` 继续保留作为早期版本记录；当前 Pages 使用的是 `docs/`。
 
 ## 打开网站
 
