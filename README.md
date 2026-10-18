@@ -1,29 +1,28 @@
 # MARTIN · 为想象赋予形状
 
-正式网站：https://martinyuan.com/
+Martin 的个人网站，展示个人介绍、项目与思考。自定义域名：**martinyuan.com**。
 
-`docs/` 是当前 React 网站的生产构建文件。GitHub Pages 从 `main` 分支的 `/docs` 目录发布，`docs/CNAME` 记录自有域名，`docs/.nojekyll` 让静态文件直接发布。
+## 发布链路
 
-本地源工程位于 `E:\Projects\个人网站\terra-nova`，发布检出位于同级 `github-pages`。后续修改源工程并构建，将 `dist/` 内文件更新到本仓库的 `docs/`，提交推送后等待 Pages 发布完成。`docs/` 中的哈希文件名由构建生成，不要直接编辑压缩后的 JavaScript。
+本地 React / TypeScript / Vite 源工程 → 构建生成 dist → 本仓库 docs → GitHub Pages → martinyuan.com。
 
-下方的原生 HTML 模板说明和原来的 `dist/` 继续保留作为早期版本记录；当前 Pages 使用的是 `docs/`。
+GitHub Pages 设置为 `main` 分支、`/docs` 目录。域名已配置 GitHub Pages 的四条 A 记录，日常更新网站不需要重复修改 DNS。
 
-## 打开网站
+## 后续如何更新
 
-双击 `dist/index.html`，即可在浏览器里打开。也可以把 `dist` 内的文件一起上传到静态网站托管服务。
+1. 在本地 `terra-nova` 源工程修改 `src/content.ts` 或页面代码。它与发布仓库的本地检出 `github-pages` 位于同一个父目录。
+2. 在源工程运行 `npm run build`，完成类型检查和生产构建。
+3. 将源工程 `dist/` 中的文件同步到本仓库 `docs/`，保留 `CNAME` 与 `.nojekyll`。
+4. 提交并推送 `main`，在仓库 Actions / Settings → Pages 查看发布状态。
 
-## 文件说明
+`docs/assets/` 是构建生成的压缩文件，应回到源工程修改内容。当前聊天入口为固定问答，尚未连接真正的个人 Agent。
 
-- `dist/index.html`：页面内容，包括名字、简介、兴趣和联系方式。
-- `dist/style.css`：页面样式，包括配色、布局和手机适配。
-- `dist/script.js`：切换浅色 / 深色模式、记住配色选择、自动更新年份。
-- `dist/favicon.svg`：浏览器标签页图标。
+## 目录说明
 
-## 换成自己的资料
+- `docs/index.html`：正式网站入口。
+- `docs/assets/`、`docs/images/`：脚本、样式与公开展示素材。
+- `docs/CNAME`：自定义域名。
+- `docs/.nojekyll`：直接发布静态文件。
+- 根目录原有的 `dist/`、`.openai/`：早期课程模板，保留历史记录，不作为当前 Pages 的发布内容。
 
-1. 将 `index.html` 中的“你的名字”替换成真实姓名，包括标题和页脚。
-2. 修改“关于我”中的简介和兴趣标签。
-3. 将 `hello@example.com` 替换成自己的邮箱，记得同时修改显示文字和 `mailto:` 链接。
-4. 如果需要更换颜色，修改 `style.css` 开头的 CSS 变量。
-
-当前姓名、简介、兴趣和邮箱是示例内容。邮箱链接会打开访客的邮件应用，网站本身不代发邮件。
+本仓库仅存放发布文件；完整源工程及部署维护说明位于本地 `terra-nova`。
